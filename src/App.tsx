@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
+import { Greet } from './components/Greet';
+import { Person } from './components/Person'
+import { PersonList } from './components/PersonList';
+import { Status } from './components/Status';
+import { Heading } from './components/Heading';
+import { Oscar } from './components/Oscar';
+import { Button } from './components/Button';
+import { Inputs } from './components/Inputs';
+import { Container } from './components/Container';
 function App() {
+  const PersonName = {
+    firstName: 'Nouman',
+    lastName: 'ulHaq'
+  }
+  const PersonLisst = [
+    {
+      firstName: 'Nouman',
+      lastName: 'ulHaq'
+    }, {
+      firstName: 'Imran',
+      lastName: 'ulHaq'
+    }, {
+      firstName: 'Sufyan',
+      lastName: 'ulHaq'
+    }, {
+      firstName: 'Ayan',
+      lastName: 'ulHaq'
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greet name='Nouman' message={10} />
+      <Person name={PersonName} />
+      <PersonList names={PersonLisst} />
+      <Status status={'success'} />
+      <Oscar>
+        <Heading>Hello There</Heading>
+      </Oscar>
+      <Button handleClick={(event, id) => {
+        console.log('event', event, id)
+      }} />
+      <Inputs handleChange={event => console.log(event)} />
+      <Container styles={{ border: '2px', color: 'red' }} />
     </div>
   );
 }
