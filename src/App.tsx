@@ -13,6 +13,9 @@ import './App.css'
 // import { ThemeContextProvider } from './components/context/ThemeContext';
 // import { Box } from './components/context/box';
 // import { MutableRef } f  rom './components/ref/MutableRef';
+// import { List } from './components/generic/List';
+// import { RandomNumber } from './components/restriction/RandomNumber';
+import { Toaster } from './components/templete/Toaster';
 function App() {
   // const PersonName = {
   //   firstName: 'Nouman',
@@ -35,6 +38,31 @@ function App() {
   // ]
   return (
     <div className="App">
+        {/* <List
+        items={['Batman', 'Superman', 'Wonder Woman']}
+        onClick={item => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={item => console.log(item)} /> */}
+      {/* <List
+        items={[
+          {
+            id: 1,
+            first: 'Bruce',
+            last: 'Wayne'
+          },
+          {
+            id: 2,
+            first: 'Clark',
+            last: 'Kent'
+          },
+          {
+            id: 3,
+            first: 'Princess',
+            last: 'Diana'
+          }
+        ]}
+        onClick={item => console.log(item)}
+      /> */}
       {/* <MutableRef />   */}
       {/* <UserContextProvider>
         <ThemeContextProvider>
@@ -53,6 +81,8 @@ function App() {
       }} />
       <Inputs handleChange={event => console.log(event)} />
       <Container styles={{ border: '2px', color: 'red' }} /> */}
+      {/* <RandomNumber  value={20} isPositive  /> */}
+      <Toaster position='center'  />
     </div>
   );
 }
